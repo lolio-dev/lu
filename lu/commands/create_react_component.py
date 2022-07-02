@@ -24,6 +24,6 @@ def create_react_component(component_name: str,
 
 	capitalized_component_name = ''.join([i.capitalize() for i in component_name.split('-')])
 
-	template = Path(f'{Path.cwd()}/lu/templates/react_component.{logic_language}x').read_text().replace('$component$', capitalized_component_name)
+	template = Path(f'{Path(__file__).parent.absolute().parent.absolute()}/templates/react_component.{logic_language}x').read_text().replace('$component$', capitalized_component_name)
 
 	component_logic_path.write_text(template)
